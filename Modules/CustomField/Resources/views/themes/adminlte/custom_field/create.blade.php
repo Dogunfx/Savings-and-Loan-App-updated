@@ -1,0 +1,232 @@
+@extends('core::layouts.master')
+@section('title')
+    {{ trans_choice('core::general.add',1) }} {{ trans_choice('customfield::general.custom_field',1) }}
+@endsection
+@section('content')
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>
+                        {{ trans_choice('core::general.add',1) }} {{ trans_choice('customfield::general.custom_field',1) }}
+                        <a href="#" onclick="window.history.back()"
+                           class="btn btn-outline-light bg-white d-none d-sm-inline-flex">
+                            <em class="icon ni ni-arrow-left"></em><span>{{ trans_choice('core::general.back',1) }}</span>
+                        </a>
+                    </h1>
+
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a
+                                    href="{{url('dashboard')}}">{{ trans_choice('dashboard::general.dashboard',1) }}</a>
+                        </li>
+                        <li class="breadcrumb-item"><a
+                                    href="{{url('custom_field')}}">{{ trans_choice('customfield::general.custom_field',2) }}</a>
+                        </li>
+                        <li class="breadcrumb-item active">{{ trans_choice('core::general.add',1) }} {{ trans_choice('customfield::general.custom_field',1) }}</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content" id="app">
+        <form method="post" action="{{ url('custom_field/store') }}">
+            {{csrf_field()}}
+            <div class="card card-bordered card-preview">
+                <div class="card-body">
+                    <div class="row gy-4">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="name"
+                                       class="control-label">{{trans_choice('core::general.name',1)}}</label>
+                                <input type="text" name="name" v-model="name"
+                                       id="name" v-on:blur="update_label"
+                                       class="form-control @error('name') is-invalid @enderror" required>
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="label"
+                                       class="control-label">{{trans_choice('customfield::general.label',1)}}</label>
+                                <input type="text" name="label" id="label"
+                                       class="form-control @error('label') is-invalid @enderror" v-model="label">
+                                @error('label')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="category"
+                                       class="control-label">{{trans_choice('customfield::general.category',1)}}</label>
+                                <select class="form-control @error('category') is-invalid @enderror" name="category"
+                                        id="category" v-model="category">
+                                    <option value="" disabled selected></option>
+                                    <option v-for="(category,index) in categories" v-bind:value="index">@{{category}}
+                                    </option>
+
+                                </select>
+                                @error('category')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="type"
+                                       class="control-label">{{trans_choice('customfield::general.type',1)}}</label>
+                                <select class="form-control @error('type') is-invalid @enderror" name="type" id="type"
+                                        v-model="type"
+                                        v-on:click="change_type">
+                                    <option value="" disabled selected></option>
+                                    <option v-for="(type,index) in types" v-bind:value="index">@{{type}}</option>
+
+                                </select>
+                                @error('type')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="options"
+                                       class="control-label">{{trans_choice('customfield::general.option',2)}}</label>
+                                <input type="text" name="options" id="options"
+                                       class="form-control @error('options') is-invalid @enderror" v-model="options">
+                                @error('options')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group" v-if="type=='select_db'">
+                                <label for="db_columns"
+                                       class="control-label">{{trans_choice('customfield::general.db_columns',1)}}</label>
+                                <input type="text" name="db_columns" id="db_columns"
+                                       class="form-control @error('db_columns') is-invalid @enderror"
+                                       v-model="db_columns">
+                                @error('db_columns')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="classes"
+                                       class="control-label">{{trans_choice('customfield::general.class',2)}}</label>
+                                <input type="text" name="classes" id="classes"
+                                       class="form-control @error('classes') is-invalid @enderror" v-model="classes">
+                                @error('classes')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="rules"
+                                       class="control-label">{{trans_choice('customfield::general.rule',2)}}</label>
+                                <input type="text" name="rules" id="rules"
+                                       class="form-control @error('rules') is-invalid @enderror" v-model="rules">
+                                @error('rules')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="required"
+                                       class="control-label">{{trans_choice('customfield::general.required',1)}}</label>
+                                <select class="form-control @error('required') is-invalid @enderror" name="required"
+                                        id="required" required v-model="required">
+                                    <option value="1">{{trans_choice('core::general.yes',1)}}</option>
+                                    <option value="0" selected>{{trans_choice('core::general.no',1)}}</option>
+                                </select>
+                                @error('required')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="active"
+                                       class="control-label">{{trans_choice('core::general.active',1)}}</label>
+                                <select class="form-control @error('active') is-invalid @enderror" name="active"
+                                        id="active" v-model="active">
+                                    <option value="0">{{trans_choice('core::general.no',1)}}</option>
+                                    <option value="1">{{trans_choice('core::general.yes',1)}}</option>
+                                </select>
+                                @error('active')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card-footer border-top ">
+                    <button type="submit"
+                            class="btn btn-primary  float-right">{{trans_choice('core::general.save',1)}}</button>
+                </div>
+            </div><!-- .card-preview -->
+        </form>
+    </section>
+@endsection
+@section('scripts')
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: "{{old('name')}}",
+                type: "{{old('type')}}",
+                types: types,
+                required: "{{old('required',0)}}",
+                active: "{{old('active',1)}}",
+                label: "{{old('label')}}",
+                options: "{{old('options')}}",
+                classes: "{{old('classes')}}",
+                db_columns: "{{old('db_columns')}}",
+                rules: "{{old('rules')}}",
+                category: "{{old('category')}}",
+                categories: categories
+
+            },
+            methods: {
+                change_type() {
+
+                },
+                update_label() {
+                    if (this.label == '') {
+                        this.label = this.name;
+                    }
+                },
+                onSubmit() {
+
+                }
+            }
+        })
+    </script>
+@endsection

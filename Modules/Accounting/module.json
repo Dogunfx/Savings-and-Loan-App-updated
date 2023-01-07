@@ -1,0 +1,18 @@
+{
+  "name": "Accounting",
+  "alias": "accounting",
+  "description": "Accounting",
+  "keywords": [],
+  "active": 1,
+  "is_core": 0,
+  "order": 6,
+  "version": "1.0",
+  "providers": [
+    "Modules\\Accounting\\Providers\\AccountingServiceProvider"
+  ],
+  "aliases": [],
+  "files": [
+    "Helpers/general_helper.php"
+  ],
+  "requires": []
+}

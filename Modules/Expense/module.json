@@ -1,0 +1,16 @@
+{
+  "name": "Expense",
+  "alias": "expense",
+  "description": "Manage your expenses",
+  "keywords": [],
+  "order": 20,
+  "active": 1,
+  "version": "1.0",
+  "is_core": 0,
+  "providers": [
+    "Modules\\Expense\\Providers\\ExpenseServiceProvider"
+  ],
+  "aliases": {},
+  "files": [],
+  "requires": []
+}

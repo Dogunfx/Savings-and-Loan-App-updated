@@ -1,0 +1,16 @@
+{
+  "name": "Dashboard",
+  "alias": "dashboard",
+  "description": "Dashboard module",
+  "keywords": [],
+  "active": 1,
+  "is_core": 1,
+  "version": "1.0",
+  "order": 4,
+  "providers": [
+    "Modules\\Dashboard\\Providers\\DashboardServiceProvider"
+  ],
+  "aliases": {},
+  "files": [],
+  "requires": []
+}

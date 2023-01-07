@@ -1,0 +1,16 @@
+{
+    "name": "Asset",
+    "alias": "asset",
+    "description": "Manage your Assets",
+    "keywords": [],
+    "active": 1,
+    "order": 7,
+    "is_core": 0,
+    "version": "1.0",
+    "providers": [
+        "Modules\\Asset\\Providers\\AssetServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

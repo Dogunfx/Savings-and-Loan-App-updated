@@ -1,0 +1,25 @@
+{
+    "name": "tjmugova/wallet",
+    "description": "",
+    "authors": [
+        {
+            "name": "Tererai Mugova",
+            "email": "tjmugova@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Wallet\\Providers\\WalletServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Wallet\\": ""
+        }
+    }
+}

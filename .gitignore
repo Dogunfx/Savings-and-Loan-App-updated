@@ -1,0 +1,17 @@
+/node_modules
+/public/storage
+/old1-vendor
+/old-vendor
+Homestead.yaml
+Homestead.json
+.idea/
+public/uploads/temporary/
+resources/views/themes/
+storage/updates/
+update/
+vendor/
+loansystem.zip
+storage/installed
+.env
+ulm.sql
+ulm2.sql

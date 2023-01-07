@@ -1,0 +1,16 @@
+{
+  "name": "Upgrade",
+  "alias": "upgrade",
+  "description": "Upgrade from version 2.0",
+  "keywords": [],
+  "order": 35,
+  "active": 1,
+  "version": "1.0",
+  "is_core": 0,
+  "providers": [
+    "Modules\\Upgrade\\Providers\\UpgradeServiceProvider"
+  ],
+  "aliases": {},
+  "files": [],
+  "requires": []
+}

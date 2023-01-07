@@ -1,0 +1,16 @@
+{
+  "name": "Branch",
+  "alias": "branch",
+  "description": "Manage Branches",
+  "keywords": [],
+  "active": 1,
+  "is_core": 1,
+  "version": "1.0",
+  "order": 5,
+  "providers": [
+    "Modules\\Branch\\Providers\\BranchServiceProvider"
+  ],
+  "aliases": {},
+  "files": [],
+  "requires": []
+}

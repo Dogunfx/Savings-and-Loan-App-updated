@@ -1,0 +1,18 @@
+{
+  "name": "Wallet",
+  "alias": "wallet",
+  "description": "This module allows your clients to have a wallet where they can make deposits and use this balance to payup loans and savings",
+  "keywords": [],
+  "active": 1,
+  "is_core": 0,
+  "version": "1.0",
+  "priority": 80,
+  "order": 80,
+  "providers": [
+    "Modules\\Wallet\\Providers\\WalletServiceProvider",
+    "Modules\\Wallet\\Providers\\EventServiceProvider"
+  ],
+  "aliases": {},
+  "files": [],
+  "requires": []
+}

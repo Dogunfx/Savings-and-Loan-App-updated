@@ -1,0 +1,16 @@
+{
+  "name": "Portal",
+  "alias": "portal",
+  "description": "Enables clients to login and view their account details",
+  "keywords": [],
+  "active": 1,
+  "is_core": 0,
+  "version": "1.0",
+  "order": 10,
+  "providers": [
+    "Modules\\Portal\\Providers\\PortalServiceProvider"
+  ],
+  "aliases": {},
+  "files": [],
+  "requires": []
+}

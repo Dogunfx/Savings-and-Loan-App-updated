@@ -1,0 +1,19 @@
+{
+  "name": "Loan",
+  "alias": "loan",
+  "description": "Loan Module",
+  "keywords": [],
+  "active": 1,
+  "is_core": 1,
+  "version": "1.0",
+  "order": 8,
+  "providers": [
+    "Modules\\Loan\\Providers\\LoanServiceProvider",
+    "Modules\\Loan\\Providers\\EventServiceProvider"
+  ],
+  "aliases": {},
+  "files": [
+    "Helpers/general_helper.php"
+  ],
+  "requires": []
+}

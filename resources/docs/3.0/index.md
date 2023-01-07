@@ -1,0 +1,27 @@
+- ## Get Started
+    - [Introduction](/{{route}}/{{version}}/introduction)
+    - [Installation](/{{route}}/{{version}}/installation)
+- ## Features
+    - [Dashboard](/{{route}}/{{version}}/dashboard)
+    - [Account](/{{route}}/{{version}}/account)
+    - [Accounting](/{{route}}/{{version}}/accounting)
+    - [Branches](/{{route}}/{{version}}/branches)
+    - [Custom Fields](/{{route}}/{{version}}/customfields)
+    - [Users](/{{route}}/{{version}}/users)    
+    - [Settings](/{{route}}/{{version}}/settings)
+    - [Menu](/{{route}}/{{version}}/menu)
+    - [Assets](/{{route}}/{{version}}/assets)
+    - [Clients](/{{route}}/{{version}}/clients)
+    - [Payroll](/{{route}}/{{version}}/payroll)
+    - [Communication](/{{route}}/{{version}}/communication)
+    - [Expenses](/{{route}}/{{version}}/expenses)
+    - [Income](/{{route}}/{{version}}/income)
+    - [Loans](/{{route}}/{{version}}/loans)
+    - [Savings](/{{route}}/{{version}}/savings)
+    - [Shares](/{{route}}/{{version}}/shares)
+    - [Modules](/{{route}}/{{version}}/modules)
+    - [Activity Logs](/{{route}}/{{version}}/activitylogs)
+    - [Portal](/{{route}}/{{version}}/portal)
+- ## Resources
+    - [Laravel](https://laravel.com/docs/7.x/)
+   

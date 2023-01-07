@@ -1,0 +1,16 @@
+{
+    "name": "Payroll",
+    "alias": "payroll",
+    "description": "Payroll Module",
+    "keywords": [],
+    "active": 1,
+    "order": 13,
+    "version": "1.0",
+    "is_core": 0,
+    "providers": [
+        "Modules\\Payroll\\Providers\\PayrollServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

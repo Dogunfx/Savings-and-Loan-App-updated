@@ -1,0 +1,17 @@
+{
+    "name": "Mpesa",
+    "alias": "mpesa",
+    "description": "Mpesa Payment Gateway",
+    "keywords": [],
+    "priority": 0,
+    "order": 40,
+    "active": 1,
+    "is_payment_gateway": 1,
+    "version": "1.0",
+    "providers": [
+        "Modules\\Mpesa\\Providers\\MpesaServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

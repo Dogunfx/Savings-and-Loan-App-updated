@@ -1,0 +1,23 @@
+<?php
+
+namespace Modules\Communication\Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+
+class CommunicationDatabaseSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Model::unguard();
+
+        $this->call(CommunicationCampaignAttachmentTypesTableSeederTableSeeder::class);
+        $this->call(CommunicationCampaignBusinessRulesTableSeederTableSeeder::class);
+        $this->call(SettingsTableSeederTableSeeder::class);
+    }
+}

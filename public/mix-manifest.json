@@ -1,0 +1,12 @@
+{
+    "/dist/app.js": "/dist/app.js",
+    "/dist/app.css": "/dist/app.css",
+    "/js/loan.js": "/js/loan.js",
+    "/css/loan.css": "/css/loan.css",
+    "/dist/js/core.js": "/dist/js/core.js",
+    "/dist/css/core.css": "/dist/css/core.css",
+    "/assets/dist/js/core.js": "/assets/dist/js/core.js",
+    "/assets/dist/css/core.css": "/assets/dist/css/core.css",
+    "/assets/dist/js/loan.js": "/assets/dist/js/loan.js",
+    "/assets/dist/css/loan.css": "/assets/dist/css/loan.css"
+}

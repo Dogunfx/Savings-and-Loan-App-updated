@@ -1,0 +1,18 @@
+{
+  "name": "Communication",
+  "alias": "communication",
+  "description": "Manage communication campaigns",
+  "keywords": [],
+  "active": 1,
+  "is_core": 0,
+  "version": "1.0",
+  "order": 9,
+  "providers": [
+    "Modules\\Communication\\Providers\\CommunicationServiceProvider"
+  ],
+  "aliases": {},
+  "files": [
+    "Helpers/general_helper.php"
+  ],
+  "requires": []
+}

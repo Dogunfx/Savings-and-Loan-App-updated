@@ -1,0 +1,16 @@
+{
+  "name": "Client",
+  "alias": "client",
+  "description": "Manage your clients",
+  "keywords": [],
+  "active": 1,
+  "is_core": 1,
+  "version": "1.0",
+  "order": 7,
+  "providers": [
+    "Modules\\Client\\Providers\\ClientServiceProvider"
+  ],
+  "aliases": {},
+  "files": [],
+  "requires": []
+}

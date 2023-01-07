@@ -1,0 +1,25 @@
+{
+    "name": "tjmugova/payroll",
+    "description": "",
+    "authors": [
+        {
+            "name": "Tererai Mugova",
+            "email": "tjmugova@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Payroll\\Providers\\PayrollServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Payroll\\": ""
+        }
+    }
+}

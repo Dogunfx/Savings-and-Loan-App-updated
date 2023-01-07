@@ -1,0 +1,25 @@
+{
+    "name": "tjmugova/user",
+    "description": "",
+    "authors": [
+        {
+            "name": "Tererai Mugova",
+            "email": "tjmugova@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\User\\Providers\\UserServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\User\\": ""
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Paynow",
+  "alias": "paynow",
+  "description": "Paynow Payment Gateway",
+  "keywords": [],
+  "order": 2,
+  "is_payment_gateway": 1,
+  "version": "1.0",
+  "providers": [
+    "Modules\\Paynow\\Providers\\PaynowServiceProvider"
+  ],
+  "aliases": {},
+  "files": [
+    "Paynow.php"
+  ],
+  "requires": []
+}

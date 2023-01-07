@@ -1,0 +1,16 @@
+{
+  "name": "Setting",
+  "alias": "setting",
+  "description": "Manage settings",
+  "keywords": [],
+  "active": 1,
+  "order": 0,
+  "version": "1.0",
+  "is_core": 1,
+  "providers": [
+    "Modules\\Setting\\Providers\\SettingServiceProvider"
+  ],
+  "aliases": {},
+  "files": [],
+  "requires": []
+}

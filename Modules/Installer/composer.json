@@ -1,0 +1,25 @@
+{
+    "name": "tjmugova/installer",
+    "description": "",
+    "authors": [
+        {
+            "name": "Tererai Mugova",
+            "email": "tjmugova@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Installer\\Providers\\InstallerServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Installer\\": ""
+        }
+    }
+}

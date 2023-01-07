@@ -1,0 +1,15 @@
+{
+    "name": "Stripe",
+    "alias": "stripe",
+    "description": "Stripe payment gateway",
+    "keywords": [],
+    "order": 3,
+    "is_payment_gateway": 1,
+    "version": "1.0",
+    "providers": [
+        "Modules\\Stripe\\Providers\\StripeServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

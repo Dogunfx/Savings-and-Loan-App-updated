@@ -1,0 +1,16 @@
+{
+    "name": "Paypal",
+    "alias": "paypal",
+    "description": "Paypal Payment Gateway",
+    "keywords": [],
+    "order": 30,
+    "active": 1,
+    "is_payment_gateway": 1,
+    "version": "1.0",
+    "providers": [
+        "Modules\\Paypal\\Providers\\PaypalServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

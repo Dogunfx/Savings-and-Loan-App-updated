@@ -1,0 +1,16 @@
+{
+  "name": "User",
+  "alias": "user",
+  "description": "User management and Roles",
+  "keywords": [],
+  "active": 1,
+  "order": 2,
+  "version": "1.0",
+  "is_core": 1,
+  "providers": [
+    "Modules\\User\\Providers\\UserServiceProvider"
+  ],
+  "aliases": {},
+  "files": [],
+  "requires": []
+}

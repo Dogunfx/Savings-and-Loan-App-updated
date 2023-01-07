@@ -1,0 +1,117 @@
+<?php
+
+namespace Modules\Core\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Routing\Controller;
+use Laracasts\Flash\Flash;
+use Modules\Core\Entities\Menu;
+use Modules\Setting\Entities\Setting;
+use Nwidart\Modules\Facades\Module;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+
+class ThemeController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware(['auth','2fa']);
+        $this->middleware(['permission:core.modules.index'])->only(['index', 'show']);
+        $this->middleware(['permission:core.modules.create'])->only(['create', 'store', 'upload']);
+        $this->middleware(['permission:core.modules.destroy'])->only(['destroy']);
+
+    }
+
+    /**
+     * Display a listing of the resource.
+     * @return Response
+     */
+    public function index(Request $request)
+    {
+        if ($request->action) {
+            if ($request->action == 'activate') {
+                $theme = json_decode($this->getFinder()->get(base_path('themes/' . $request->name . "/theme.json")));
+                if ($theme) {
+                    Setting::where('setting_key', 'core.active_theme')->update(['setting_value' => $theme->name]);
+                    activity()->log('Change Theme');
+                    \flash(trans_choice("core::general.successfully_saved", 1))->success()->important();
+                    return redirect('theme');
+                }
+            }
+        }
+        $data = [];
+        foreach ($this->getFinder()->directories(base_path('themes')) as $dir) {
+            $data[] = json_decode($this->getFinder()->get($dir . "/theme.json"));
+        }
+        return theme_view('core::theme.index', compact('data'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     * @return Response
+     */
+    public function upload()
+    {
+        return theme_view('core::module.upload');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     * @param Request $request
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Show the specified resource.
+     * @param int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        return theme_view('core::show');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     * @param int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        return theme_view('core::edit');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * @param int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+    /**
+     * @return \Illuminate\Filesystem\Filesystem
+     */
+    protected function getFinder()
+    {
+        return app('files');
+    }
+}
