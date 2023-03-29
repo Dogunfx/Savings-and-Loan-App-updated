@@ -1,4 +1,9 @@
+
 @extends('core::layouts.auth')
+@php
+use App\Helpers\GeneralHelper;
+    
+@endphp
 @section("title")
     {{trans_choice("user::general.login",1)}}
 @endsection
@@ -23,7 +28,9 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <div class="form-label-group">
-                            <label class="form-label" for="email">{{trans_choice("user::general.email",1)}}</label>
+                            <label class="form-label" for="email">{{trans_choice("user::general.email",1)}}
+                
+                            </label>
                         </div>
                         <input type="email" class="form-control form-control-lg @error('email') is-invalid @enderror"
                                name="email"

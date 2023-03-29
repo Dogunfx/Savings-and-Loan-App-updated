@@ -1,4 +1,8 @@
 @extends('core::layouts.master')
+@php
+use App\Helpers\GeneralHelper;
+    
+@endphp
 @section('title')
     {{ trans_choice('core::general.add',1) }} {{ trans_choice('client::general.client',1) }}
 @endsection
@@ -82,7 +86,7 @@
                                     </label>
                                 <input type="text" name="account_number"
                                        id="account_number"
-                                       value="{{ random_int(100000000, 99999999999) }} "
+                                       value="{{ GeneralHelper::generateAccount(10) }} "
                                        readonly
                                        class="form-control @error('account_number') is-invalid @enderror">
                                 @error('external_id')
